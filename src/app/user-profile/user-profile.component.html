@@ -1,7 +1,7 @@
 <p>firstname : {{user.firstName}}</p>
 <p>lastname : {{user.lastName}}</p>
 <p [hidden]="isTextHidden">age : {{user.age}}</p> 
-<button (click)="hideAge()" (click)="onHandleAge()" >{{user.buttonText}}</button><br>
+<button (click)="hideAge()" >{{user.buttonText}}</button><br>
 <img [src]= "user.photo">
 <p>quote : {{user.quote}}</p>
 <input type="text" [(ngModel)]="user.quote">

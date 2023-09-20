@@ -20,14 +20,14 @@ export class UserProfileComponent {
 
   hideAge() {
       this.isTextHidden = !this.isTextHidden;
-    }
-    onHandleAge() {
       if (this.user.buttonText === "hide age") {
         this.user.buttonText = "show age";
       } else if (this.user.buttonText === "show age") {
         this.user.buttonText = "hide age";
       }
     }
+    
+  
 }
 
       
