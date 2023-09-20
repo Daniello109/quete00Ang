@@ -12,14 +12,22 @@ export class UserProfileComponent {
   firstName: "John",
   age : 25,
   quote : 'too hot to sleep',
-  photo : 'https://randomuser.me/api/portraits/lego/2.jpg'
+  photo : 'https://randomuser.me/api/portraits/lego/2.jpg',  
+  buttonText : "hide age"
   };
+
   isTextHidden: boolean = false;
 
   hideAge() {
       this.isTextHidden = !this.isTextHidden;
     }
-  
+    onHandleAge() {
+      if (this.user.buttonText === "hide age") {
+        this.user.buttonText = "show age";
+      } else if (this.user.buttonText === "show age") {
+        this.user.buttonText = "hide age";
+      }
+    }
 }
 
       
