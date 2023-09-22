@@ -8,12 +8,13 @@ import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
 import { SignupComponent } from './signup/signup.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     UserProfileComponent,
     MenuComponent,
-    SignupComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,FormsModule,
