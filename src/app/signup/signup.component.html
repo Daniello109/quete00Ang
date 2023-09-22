@@ -1,0 +1,55 @@
+<form #myForm="ngForm" (ngSubmit)="myForm.valid && onSubmit()" >
+    
+  <!--   <div>
+        Form submitted ? {{myForm.submitted}}
+        Form valid ? {{myForm.valid}}
+        Form invalid ? {{myForm.invalid}}
+      </div> -->
+  
+      <fieldset>
+        <label for="firstname">Firstname</label>
+        <input id="firstname" name="firstname" type="text" [(ngModel)]="model.firstname" #firstname="ngModel" required minlength="3" maxlength="15">
+      </fieldset>
+      <div *ngIf="myForm.submitted && firstname.invalid">
+            <span *ngIf="firstname.errors?.['required']">field firstname is required</span>
+            <span *ngIf="firstname.errors?.['minlength']">min length 3 chars</span>
+            <span *ngIf="firstname.errors?.['maxlength']">max length 15 chars</span>
+      </div>
+    
+  
+  
+      <fieldset>
+        <label for="lastname">Lastname</label>
+        <input id="lastname" name="lastname" type="text" [(ngModel)]="model.lastname" #lastname="ngModel" required minlength="3" maxlength="15">
+      </fieldset>
+  
+      <div *ngIf="myForm.submitted && lastname.invalid">
+        <span *ngIf="lastname.errors?.['required']">field lastname is required</span>
+        <span *ngIf="lastname.errors?.['minlength']">min length 3 chars</span>
+        <span *ngIf="lastname.errors?.['maxlength']">max length 15 chars</span>
+      </div>
+  
+      <fieldset>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" [(ngModel)]="model.email" #email="ngModel" email required>
+      </fieldset>
+  
+      <div *ngIf="myForm.submitted && email.invalid">
+        <span *ngIf="email.errors?.['required']">field email is required</span>
+        <span *ngIf="email.errors?.['email']"> email@email is required</span>
+      </div>
+  
+      <fieldset>
+        <label for="password">password</label>
+        <input id="pass" name="password" type="password" [(ngModel)]="model.password" #password="ngModel" required password>
+      </fieldset>
+  
+      <div *ngIf="myForm.submitted && password.invalid">
+        <span *ngIf="password.errors?.['required']">field password is required</span>
+      </div>
+  
+  
+      <button type="reset">Reset</button>
+      <button type="submit">send</button>
+  </form>
+  
